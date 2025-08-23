@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript DOM</title>
+</head>
+
+<body>
+  <div>
+    <h1>First Heading</h1>
+    <h1>Second Heading</h1>
+    <h1>Third Heading</h1>
+    <h1>Fourth Heading</h1>
+    <h2 class="message">First Heading</h2>
+
+    <div id="container">
+      <h2 class="message">Second Heading</h2>
+      <h2 class="message">Third Heading</h2>
+      <h3 class="message">Fourth Heading</h3>
+    </div>
+
+    <p id="message">JavaScript DOM id</p>
+    <input type="radio" name="gender" value="male" />
+    <input type="radio" name="gender" value="female" />
+
+    <div class="title">
+      <p class="text">JavaScript DOM title</p>
+    </div>
+    <div class="title1">
+      <p>JavaScript DOM Example 1</p>
+      <p class="second">JavaScript DOM Example 2</p>
+      <p>JavaScript DOM Example 3</p>
+    </div>
+  </div>
+  <script>
+    // getElementById Method
+    let msg = document.getElementById("message");
+    console.log(msg);
+
+    // getElementsByName Method
+    let radio = document.getElementsByName("gender");
+    console.log(radio);
+
+    //getElementsByTagName Method
+    let heading = document.getElementsByTagName("h1");
+    console.log(heading);
+
+    // getElementsByClassName Method
+    let message = document.getElementsByClassName("message");
+    console.log(message);
+
+    let cont = document.getElementById("container");
+    let message1 = cont.getElementsByClassName("message");
+    console.log(message1);
+    message2
+    // querySelector Method
+    let = document.querySelector(".message");
+    console.log(message2);
+
+    // querySelectorAll Method
+    //can use all css selector
+    let message3 = document.querySelectorAll(".message");
+    console.log(message3);
+    // let cont = document.getElementById("container");
+    let message4 = cont.querySelectorAll(".message");
+    console.log(message4);
+
+    // parentnode Method
+    let text = document.querySelector(".text");
+    console.log(text.parentNode);
+
+    // node Method
+    let title = document.querySelector(".title1");
+    console.log(title.firstChild);
+    console.log(title.firstElementChild);
+    console.log(title.lastChild);
+    console.log(title.lastElementChild);
+    console.log(title.childNodes);
+
+    //sibling Method
+    let second = document.querySelector(".second");
+    console.log(second.previousElementSibling);
+    console.log(second.nextElementSibling);
+
+  </script>
+
+
+</body>
+
+</html>

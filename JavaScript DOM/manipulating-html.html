@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Manipulating HTML Elements</title>
+  </head>
+  <body>
+    <ul id="menu">
+      <li>Home</li>
+      <li>About</li>
+      <li>Contact</li>
+      <li>Project</li>
+    </ul>
+    <ul id="menu1">
+      <li>Home</li>
+      <li>About</li>
+      <li style="display: none">Contact</li>
+      <li>Project</li>
+    </ul>
+    <div class="exam">
+      <p class="txt">Example text para</p>
+      <p class="replace">Example text 1</p>
+      <p class="rem">Example text 2</p>
+    </div>
+    <input
+      type="text"
+      id="username"
+      placeholder="username" />
+    <script>
+      //createElement Method
+      let div = document.createElement("div");
+      div.innerHTML = " <p>Welcome to GreatStack</p>";
+      div.id = "greatstack";
+      div.className = "stack";
+      document.body.appendChild(div);
+      console.log(div);
+
+      //appendchild Method
+      let menu = document.getElementById("menu");
+      let list = document.createElement("li");
+      list.innerHTML = "Services";
+      menu.appendChild(list);
+      console.log(list);
+
+      //textcontent Method
+      //innertext display visible text only
+      let menu1 = document.getElementById("menu1");
+      console.log(menu1.innerText);
+      console.log(menu1.textContent);
+
+      //after Method
+      let example = document.querySelector(".exam");
+      let para = example.querySelector(".txt");
+
+      console.log(para);
+      let aftertxt = document.createElement("p");
+      aftertxt.innerHTML = "After";
+      para.after(aftertxt);
+      console.log(example);
+
+      //before Method
+
+      let beforetxt = document.createElement("p");
+      beforetxt.innerHTML = "Before";
+      para.before(beforetxt);
+      console.log(example);
+
+      // remove Method
+      //  let removetxt = document.createElement("p");
+      // removetxt.innerHTML = "Before";
+      // para.remove(removetxt);
+      // console.log(example);
+
+      // replace Method
+      // let replacewith = document.createElement("p");
+      // replacewith.innerHTML = "replacewith";
+      // para.replaceWith(replacewith);
+      // console.log(example);
+
+      //append Method
+      let appendmtd = document.createElement("p");
+      appendmtd.innerHTML = "append";
+      example.append(appendmtd);
+      console.log(example);
+
+      //prepend Method
+      let prependmtd = document.createElement("p");
+      prependmtd.innerHTML = "prepend";
+      example.prepend(prependmtd);
+      console.log(example);
+
+      //adjacent Method
+      example.insertAdjacentHTML("afterbegin", "<p>AdjacentHTML</p>");
+      console.log(example);
+
+      //replaceChild Method
+      let rep = example.querySelector(".replace");
+      let replacemtd = document.createElement("p");
+      replacemtd.innerHTML = "replacechild";
+      example.replaceChild(replacemtd, rep);
+      console.log(example);
+
+      //cloneNode Method
+      let clone = example.cloneNode(true);
+      console.log(clone);
+
+      //removeChild Method
+      let rem = example.querySelector(".rem");
+      example.removeChild(rem);
+      //example,removeChild(example.lastElement Child);
+      console.log(example);
+
+      //inserrtBefore Method
+      let insertbefore = document.createElement("p");
+      insertbefore.innerHTML = "insertbefore";
+      example.insertBefore(insertbefore, para);
+      console.log(example);
+    </script>
+    <script>
+      // getAttribute Method
+      let inputBox = document.getElementById("username");
+      console.log(inputBox.attributes);
+      console.log(inputBox.getAttribute("placeholder"));
+
+      // setAttribute Method
+      inputBox.setAttribute("placeholder", "Enter your name");
+      console.log(inputBox.getAttribute("placeholder"));
+
+      //hasAttribute Method
+      console.log(inputBox.hasAttribute("placeholder"));
+      console.log(inputBox.hasAttribute("class"));
+
+      //removeAttribute Method
+      inputBox.removeAttribute("placeholder");
+
+      console.log(inputBox.hasAttribute("placeholder"));
+    </script>
+  </body>
+</html>
