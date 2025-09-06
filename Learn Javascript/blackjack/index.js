@@ -1,7 +1,7 @@
 let firstCard = 11;
 let secondCard = 1;
-let cards = [firstCard, secondCard]; //array
 let sum = firstCard + secondCard;
+let cards = [firstCard, secondCard]; //array
 let hasBlackJack = false;
 let isAlive = true;
 let message = "";
