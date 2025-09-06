@@ -7,14 +7,19 @@ function add3Points() {
   myPoints += 3;
 }
 add3Points();
+console.log(myPoints);
+
 add3Points();
+console.log(myPoints);
 add3Points();
+console.log(myPoints);
 
 function remove1Point() {
   myPoints -= 1;
 }
 
 remove1Point();
+console.log(myPoints);
 remove1Point();
 
 // Call the functions to that the line below logs out 10
