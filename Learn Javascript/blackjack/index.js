@@ -1,21 +1,43 @@
-let firstCard = 11;
-let secondCard = 1;
-let sum = firstCard + secondCard;
-let cards = [firstCard, secondCard]; //array
+let sum = 0;
+let cards = []; //array
 let hasBlackJack = false;
-let isAlive = true;
+let isAlive = false;
 let message = "";
 let messageEl = document.getElementById("message-el");
 let sumEl = document.querySelector("#sum-el");
 let cardsEl = document.querySelector(".card-el");
+console.log(cards);
 
 function startGame() {
+  isAlive = true;
+  let firstCard = getRandomCard();
+  let secondCard = getRandomCard();
+  cards = [firstCard, secondCard]; //array
+  sum = firstCard + secondCard;
   renderGame();
 }
 
+// Make this function return a random number between 1 and 13
+function getRandomCard() {
+  let randomCard = Math.floor(Math.random() * 13) + 1;
+  // if 1     -> return 11
+  if (randomCard === 1) {
+    return 11;
+    // if 11-13 -> return 10
+  } else if (randomCard > 10) {
+    return 10;
+  } else {
+    return randomCard;
+  }
+}
+
 function renderGame() {
-  cardsEl.textContent = "Cards : " + cards[0] + ", " + cards[1];
-  sumEl.textContent = "Sum : " + sum;
+  cardsEl.textContent = "Cards: ";
+  for (let i = 0; i < cards.length; i++) {
+    cardsEl.textContent += cards[i] + " ";
+  }
+
+  sumEl.textContent = "Sum:  " + sum;
   if (sum <= 20) {
     message = "Do you want to draw a new card?";
   } else if (sum === 21) {
@@ -25,21 +47,19 @@ function renderGame() {
     message = "You're out of the game!";
     isAlive = false;
   }
+  messageEl.textContent = message;
   // console.log(hasBlackJack);
   // console.log(isAlive);
   // console.log(logMessage);
-  messageEl.textContent = message;
 }
 
 function newCard() {
-  console.log("Drawing a new card from the deck!");
-  let card = 12;
-  sum += card;
-  cards.push(card);
-
-  renderGame();
+  // Only allow the player to get a new card if she IS alive and does NOT have Blackjack
+  if (isAlive === true && hasBlackJack === false) {
+    let card = getRandomCard();
+    sum += card;
+    cards.push(card);
+    renderGame();
+  }
   // console.log(cards)
-  // cardsEl.textContent =
-  //   "Cards : " + firstCard + ", " + secondCard + ", " + card;
 }
-// let experience = ["HTML", "CSS"];
