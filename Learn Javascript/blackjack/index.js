@@ -8,6 +8,14 @@ let sumEl = document.querySelector("#sum-el");
 let cardsEl = document.querySelector(".card-el");
 console.log(cards);
 
+let player = {
+  name: "Richmond",
+  chips: 145,
+};
+
+let playerEl = document.querySelector("#player-el");
+playerEl.textContent = player.name + ": " + player.chips;
+
 function startGame() {
   isAlive = true;
   let firstCard = getRandomCard();
@@ -63,3 +71,4 @@ function newCard() {
   }
   // console.log(cards)
 }
+eh89he;
