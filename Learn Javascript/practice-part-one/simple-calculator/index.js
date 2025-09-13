@@ -1,29 +1,45 @@
 let num1 = 8;
 let num2 = 2;
+
+// Display the initial numbers in their respective HTML elements
 document.getElementById("num1-el").textContent = num1;
 document.getElementById("num2-el").textContent = num2;
 
-// Create four functions: add(), subtract(), divide(), multiply()
-// Call the correct function when the user clicks on one of the buttons
-// Perform the given calculation using num1 and num2
-// "Sum: 10" (since 8 + 2 = 10) inside the paragraph with id="sum-el"
-// Render the result of the calculation in the paragraph with id="sum-el"
-// E.g. if the user clicks on the "Plus" button, you should render
-
+// Get reference to the paragraph element where results will be displayed
 let sumEl = document.getElementById("sum-el");
+
+/**
+ * Addition function
+ * Adds num1 and num2, then displays the result
+ */
 function add() {
   let result = num1 + num2;
-  sumEl.textContent = "Answer: " + result;
+  sumEl.textContent = "Sum: " + result;
 }
+
+/**
+ * Division function  
+ * Divides num1 by num2, then displays the result
+ */
 function divide() {
   let result = num1 / num2;
-  sumEl.textContent = "Answer: " + result;
+  sumEl.textContent = "Quotient: " + result;
 }
+
+/**
+ * Subtraction function
+ * Subtracts num2 from num1, then displays the result
+ */
 function subtract() {
   let result = num1 - num2;
-  sumEl.textContent = "Answer: " + result;
+  sumEl.textContent = "Difference: " + result;
 }
+
+/**
+ * Multiplication function
+ * Multiplies num1 by num2, then displays the result
+ */
 function multiply() {
   let result = num1 * num2;
-  sumEl.textContent = "Answer: " + result;
+  sumEl.textContent = "Product: " + result;
 }

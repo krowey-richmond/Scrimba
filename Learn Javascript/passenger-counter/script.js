@@ -1,28 +1,22 @@
-// document.getElementById('count-el').innerText= 5;
-
-//   let count = 0;
-//   console.log(count);
-
-//   let myAge = 21;
-//   console.log(myAge);
-
-// function increment() {
-//     console.log("The button was clicked");
-// }
-
+// Get the count element
 let countEl = document.getElementById("count-el");
 console.log(countEl);
+
+// Initialize count
 let count = 0;
 
+// Get the save element
 let saveEl = document.getElementById("save-el");
 
+// Increment function: increases count and updates display
 function increment() {
-  count += 1; //count = count + 1
+  count += 1;
   countEl.textContent = count;
   console.log("The button was clicked");
   console.log(count);
 }
 
+// Save function: saves current count, resets count, and updates display
 function save() {
   let saveTxt = count + " - ";
   saveEl.textContent += saveTxt;
