@@ -26,7 +26,8 @@ button {
   margin-top: 5px;
   font-weight: bold;
 }
-#input-btn {
+#input-btn,
+#tab-btn {
   background-color: #5f9341;
   border: none;
   color: #fefffc;
