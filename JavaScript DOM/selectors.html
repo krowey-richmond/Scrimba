@@ -1,92 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript DOM</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JavaScript DOM</title>
-</head>
+  <body>
+    <div>
+      <h1>First Heading</h1>
+      <h1>Second Heading</h1>
+      <h1>Third Heading</h1>
+      <h1>Fourth Heading</h1>
+      <h2 class="message">First Heading</h2>
 
-<body>
-  <div>
-    <h1>First Heading</h1>
-    <h1>Second Heading</h1>
-    <h1>Third Heading</h1>
-    <h1>Fourth Heading</h1>
-    <h2 class="message">First Heading</h2>
+      <div id="container">
+        <h2 class="message">Second Heading</h2>
+        <h2 class="message">Third Heading</h2>
+        <h3 class="message">Fourth Heading</h3>
+      </div>
 
-    <div id="container">
-      <h2 class="message">Second Heading</h2>
-      <h2 class="message">Third Heading</h2>
-      <h3 class="message">Fourth Heading</h3>
+      <p id="message">JavaScript DOM id</p>
+      <input type="radio" name="gender" value="male" />
+      <input type="radio" name="gender" value="female" />
+
+      <div class="title">
+        <p class="text">JavaScript DOM title</p>
+      </div>
+      <div class="title1">
+        <p>JavaScript DOM Example 1</p>
+        <p class="second">JavaScript DOM Example 2</p>
+        <p>JavaScript DOM Example 3</p>
+      </div>
     </div>
+    <script>
+      // getElementById → selects one element by its unique ID
+      let msg = document.getElementById("message");
+      console.log(msg);
 
-    <p id="message">JavaScript DOM id</p>
-    <input type="radio" name="gender" value="male" />
-    <input type="radio" name="gender" value="female" />
+      // getElementsByName → selects all elements with the given "name" attribute (NodeList)
+      let radio = document.getElementsByName("gender");
+      console.log(radio);
 
-    <div class="title">
-      <p class="text">JavaScript DOM title</p>
-    </div>
-    <div class="title1">
-      <p>JavaScript DOM Example 1</p>
-      <p class="second">JavaScript DOM Example 2</p>
-      <p>JavaScript DOM Example 3</p>
-    </div>
-  </div>
-  <script>
-    // getElementById Method
-    let msg = document.getElementById("message");
-    console.log(msg);
+      // getElementsByTagName → selects all elements of a given tag (HTMLCollection)
+      let heading = document.getElementsByTagName("h1");
+      console.log(heading);
 
-    // getElementsByName Method
-    let radio = document.getElementsByName("gender");
-    console.log(radio);
+      // getElementsByClassName → selects all elements with a given class (HTMLCollection)
+      let message = document.getElementsByClassName("message");
+      console.log(message);
 
-    //getElementsByTagName Method
-    let heading = document.getElementsByTagName("h1");
-    console.log(heading);
+      // You can scope it to a parent element
+      let cont = document.getElementById("container");
+      let message1 = cont.getElementsByClassName("message");
+      console.log(message1);
 
-    // getElementsByClassName Method
-    let message = document.getElementsByClassName("message");
-    console.log(message);
+      // querySelector → selects the first element that matches a CSS selector
+      let message2 = document.querySelector(".message");
+      console.log(message2);
 
-    let cont = document.getElementById("container");
-    let message1 = cont.getElementsByClassName("message");
-    console.log(message1);
-    message2
-    // querySelector Method
-    let = document.querySelector(".message");
-    console.log(message2);
+      // querySelectorAll → selects ALL elements matching a CSS selector (NodeList)
+      let message3 = document.querySelectorAll(".message");
+      console.log(message3);
 
-    // querySelectorAll Method
-    //can use all css selector
-    let message3 = document.querySelectorAll(".message");
-    console.log(message3);
-    // let cont = document.getElementById("container");
-    let message4 = cont.querySelectorAll(".message");
-    console.log(message4);
+      // querySelectorAll scoped to #container
+      let message4 = cont.querySelectorAll(".message");
+      console.log(message4);
 
-    // parentnode Method
-    let text = document.querySelector(".text");
-    console.log(text.parentNode);
+      // parentNode → gets the parent element of the selected node
+      let text = document.querySelector(".text");
+      console.log(text.parentNode);
 
-    // node Method
-    let title = document.querySelector(".title1");
-    console.log(title.firstChild);
-    console.log(title.firstElementChild);
-    console.log(title.lastChild);
-    console.log(title.lastElementChild);
-    console.log(title.childNodes);
+      // Child nodes and elements
+      let title = document.querySelector(".title1");
+      console.log(title.firstChild); // could be text (whitespace) or element
+      console.log(title.firstElementChild); // always the first child element
+      console.log(title.lastChild); // could be text node
+      console.log(title.lastElementChild); // last child element
+      console.log(title.childNodes); // NodeList (includes text nodes & elements)
 
-    //sibling Method
-    let second = document.querySelector(".second");
-    console.log(second.previousElementSibling);
-    console.log(second.nextElementSibling);
-
-  </script>
-
-
-</body>
-
+      // Sibling navigation
+      let second = document.querySelector(".second");
+      console.log(second.previousElementSibling); // the <p> before .second
+      console.log(second.nextElementSibling); // the <p> after .second
+    </script>
+  </body>
 </html>

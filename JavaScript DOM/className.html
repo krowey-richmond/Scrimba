@@ -2,52 +2,67 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
-    <h1
-      class="main message"
-      id="title">
+    <!-- Heading element with both a class and an ID -->
+    <h1 class="main message" id="title">
       JavaScript DOM
     </h1>
 
     <script>
-      // className Method
+      // ======================
+      // Using className
+      // ======================
+
+      // Get the element with id="title"
       let title = document.getElementById("title");
+
+      // Log the current classes as a string ("main message")
       console.log(title.className);
 
-      title.className = "new"; //overwrite class
+      // Overwrite ALL classes with a single class "new"
+      title.className = "new";
       console.log(title.className);
-      title.className += " add"; //add new class
+
+      // Append another class ("add") to the existing string
+      title.className += " add";
       console.log(title.className);
+
+      // Log the actual element to check applied classes
       console.log(title);
 
-      //classList Method
+
+      // ======================
+      // Using classList
+      // ======================
+
+      // Get the same element again
       let title1 = document.getElementById("title");
+
+      // Log the current classes as a DOMTokenList (more flexible than string)
       console.log(title1.classList);
 
-      //add new class
+      // Add multiple new classes ("add1", "new2")
       title1.classList.add("add1", "new2");
       console.log(title1.classList);
       console.log(title1);
 
-      //remove class
+      // Remove one class ("add1")
       title1.classList.remove("add1");
       console.log(title1.classList);
       console.log(title1);
 
-      //replace class
+      // Replace an existing class ("new") with another ("newrep")
       title1.classList.replace("new", "newrep");
       console.log(title1.classList);
       console.log(title1);
 
-      //contains class
-      console.log(title1.classList.contains("newrep"));
+      // Check if element contains a specific class ("newrep")
+      console.log(title1.classList.contains("newrep")); // true or false
 
-      //toggle class
+      // Toggle a class: removes it if present, adds it if absent
       title1.classList.toggle("newrep");
       console.log(title1.classList);
       console.log(title1);

@@ -2,12 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <style>
+      /* Styles applied from CSS (external/stylesheet) */
       #email {
         background-color: green;
         font-size: 20px;
@@ -16,43 +15,55 @@
     </style>
   </head>
   <body>
+    <!-- Input with inline styles applied directly in HTML -->
     <input
       type="text"
       id="username"
       placeholder="username"
-      style="background-color: red; font-size: 20px" />
-    <input
-      type="text"
-      id="email"
-      placeholder="Enter your email" />
+      style="background-color: red; font-size: 20px"
+    />
+
+    <!-- Input styled by CSS in the <style> block -->
+    <input type="text" id="email" placeholder="Enter your email" />
+
     <script>
-      //style
+      // ============================
+      // INLINE STYLE ACCESS & CHANGE
+      // ============================
+
       let inputBox = document.getElementById("username");
-      console.log(inputBox.style);
-      console.log(inputBox.style.backgroundColor);
-      console.log(inputBox.style.fontSize);
 
-      //style change
-      inputBox.style.backgroundColor = "#f4f4f4";
-      inputBox.style.fontSize = "30px";
-      inputBox.style.padding = "10px";
+      console.log(inputBox.style); // Shows CSS properties applied inline
+      console.log(inputBox.style.backgroundColor); // "red"
+      console.log(inputBox.style.fontSize); // "20px"
 
-      //css text
-      inputBox.style.cssText += "width: 200px";
+      // Change inline styles using JS
+      inputBox.style.backgroundColor = "#f4f4f4"; // Light gray background
+      inputBox.style.fontSize = "30px"; // Bigger text
+      inputBox.style.padding = "10px"; // Add padding
 
-      //get css text
+      // Add new style rules via cssText
+      inputBox.style.cssText += "width: 200px"; // Append width style
+
+      // Get the final cssText string
       console.log(inputBox.style.cssText);
 
-      //get computed style
+      // ============================
+      // COMPUTED STYLES
+      // ============================
+
       let inputB = document.getElementById("email");
+
+      // getComputedStyle returns ALL styles (from CSS, inline, and browser defaults)
       console.log(window.getComputedStyle(inputB));
 
-      console.log(window.getComputedStyle(inputB).fontSize);
-      //set computed style
-      inputB.style.backgroundColor = "WHEAT";
-      inputB.style.fontSize = "15px";
-      inputB.style.padding = "15px";
+      // Access specific computed property → comes from stylesheet
+      console.log(window.getComputedStyle(inputB).fontSize); // "20px"
+
+      // Change styles directly via JS (adds inline styles)
+      inputB.style.backgroundColor = "wheat"; // Inline override
+      inputB.style.fontSize = "15px"; // Override size
+      inputB.style.padding = "15px"; // Override padding
     </script>
-    1:03
   </body>
 </html>
