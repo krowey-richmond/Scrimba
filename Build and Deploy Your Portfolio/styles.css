@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --ff-primary: "Source Sans Pro", sans-serif;
+  --ff-secondary: "Source Code Pro", monospace;
+
+  --fw-reg: 300;
+  --fw-bold: 900;
+
+  --clr-light: #fff;
+  --clr-dark: #303030;
+  --clr-accent: #16e0bd;
+
+  --fs-h1: clamp(3rem, 2.5rem + 2.5vw, 4.5rem);
+  --fs-h2: clamp(2.25rem, 1.75rem + 2.5vw, 3.75rem);
+  --fs-h3: clamp(1.25rem, 1.1667rem + 0.4167vw, 1.5rem);
+  --fs-body: clamp(1rem, 0.9583rem + 0.2083vw, 1.125rem);
+}
