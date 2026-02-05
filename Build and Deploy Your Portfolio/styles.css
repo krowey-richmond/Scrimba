@@ -21,3 +21,11 @@
   --fs-h3: clamp(1.25rem, 1.1667rem + 0.4167vw, 1.5rem);
   --fs-body: clamp(1rem, 0.9583rem + 0.2083vw, 1.125rem);
 }
+
+
+body {
+  font-family: var(--ff-primary);
+  color: var(--clr-dark);
+  background-color: var(--clr-light);
+  
+}
