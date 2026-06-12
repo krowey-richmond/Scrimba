@@ -22,11 +22,15 @@
   --fs-h2: clamp(2.25rem, 1.0227rem + 5.4545vw, 3.75rem);
   --fs-h3: clamp(1.25rem, 1.0455rem + 0.9091vw, 1.5rem);
   --fs-body: clamp(1rem, 0.8977rem + 0.4545vw, 1.125rem);
+
+  --bs:
+    0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.25),
+    0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
 }
 
 /* General styles */
 body {
-  font-family: var(--ff-primary);
+  font-family: var(--ff-primary), sans-serif;
   color: var(--clr-dark);
   margin: 0;
   background-color: var(--clr-light);
@@ -36,18 +40,49 @@ body {
 
 img {
   display: block;
-  width: 100%;
+
   max-width: 100%;
 }
 
-/* Typography */
 strong {
   font-weight: var(--fw-bold);
 }
+
+section {
+  padding: 5em 2em;
+}
+
+:focus {
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 3px;
+}
+
+/* buttons */
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 2.5rem;
+  background: var(--clr-accent);
+  color: var(--clr-dark);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: var(--fw-bold);
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+/* Typography */
+
 h1,
 h2,
 h3 {
-  line-height: 1.1;
+  line-height: 1;
   margin: 0;
 }
 
@@ -80,10 +115,11 @@ h3 {
 
 .section__subtitle--intro,
 .section__subtitle--about {
-  background: var(--clr-accent);
-  font-family: var(--ff-secondary);
+     background: var(--clr-accent);
+  font-family: var(--ff-secondary), monospace ;
   margin-bottom: 1rem;
   padding: 0.25rem 1rem;
+
 }
 
 /* nav */
